@@ -12,13 +12,25 @@
 
 @implementation StackOverflowService
 
-// MARK: - API REQUESTS
+#pragma mark - SINGLETON
 
-- (void)fetchTaggedQuestions:(NSString *)tag withCompletion:(void(^)(NSArray *results, NSString *errorDescription))completionHandler {
-    NSString *tagString = tag;
++ (StackOverflowService *)networkController {
+    static StackOverflowService *networkController = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        networkController = [[self alloc] init];
+    });
+    
+    return networkController;
+}
+
+#pragma mark - API REQUESTS
+
+- (void)fetchTaggedQuestions:(NSString *)searchTag withCompletion:(void(^)(NSArray *results, NSString *errorDescription))completionHandler {
+    NSString *searchTagString = searchTag;
     NSString *questionURLStart = (@"http://api.stackexchange.com/2.2/questions?order=desc&sort=activity&tagged=");
     NSString *questionURLEnd = (@"&site=stackoverflow");
-    NSString *questionURL = [[questionURLStart stringByAppendingString:tagString] stringByAppendingString:questionURLEnd];
+    NSString *questionURL = [[questionURLStart stringByAppendingString:searchTagString] stringByAppendingString:questionURLEnd];
     NSLog(@"%@", questionURL);
     //http://api.stackexchange.com/2.2/questions?order=desc&sort=activity&tagged=swift&site=stackoverflow
     
@@ -37,10 +49,11 @@
                 NSInteger responseCode = [httpResponse statusCode];
                 switch (responseCode) {
                     case 200:
-                        NSLog(@"Good!");
+                        NSLog(@"Good! Response Code: 200.");
                         completionHandler([Question parseJSONDataIntoQuestion:data], nil);
                         break;
                     default:
+                        NSLog(@"Bad: %ld", (long)responseCode); // %@ <- string interpolation
                         break;
                 }
             } else {
@@ -53,6 +66,7 @@
     [dataTask resume];
 }
 
+@end
 
 //func repoSearch(searchText: String, completionHandler: (errorDescription: String?, repos: [Repositories]?) -> (Void)) {
 //    // Checks to see if authenticated
@@ -154,8 +168,6 @@
  
 }
 */
-
-@end
 
 //-(void)fetchUserReposAndFollowers {
 //    NSURL *repoURL = [[NSURL alloc]initWithString:@"https://api.github.com/user/repos?sort=pushed"];

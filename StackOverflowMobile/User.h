@@ -20,7 +20,8 @@
 @property (nonatomic, strong) NSString *websiteURL;
 @property (nonatomic, strong) NSString *avatarURL;
 
-- (instancetype)initWithDictionary:(NSDictionary *)userDictionary;
 + (NSMutableArray *)parseJSONDataIntoUser:(NSData *)rawJSONData;
+
+- (instancetype)initWithDictionary:(NSDictionary *)userDictionary;
 
 @end

@@ -12,13 +12,14 @@
 
 // /questions
 // /2.2/questions?order=desc&sort=activity&site=stackoverflow
-@property (nonatomic, strong) NSNumber *questionID;
-@property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSString *link;
-@property (nonatomic, strong) NSMutableArray *tags;
+@property (strong, nonatomic) NSNumber *questionID;
+@property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSString *link;
+@property (strong, nonatomic) NSMutableArray *tags;
 //@property (nonatomic, strong) NSString *body;
 
-- (instancetype)initWithDictionary:(NSDictionary *)questionDictionary;
 + (NSMutableArray *)parseJSONDataIntoQuestion:(NSData *)rawJSONData;
+
+- (instancetype)initWithDictionary:(NSDictionary *)questionDictionary;
 
 @end

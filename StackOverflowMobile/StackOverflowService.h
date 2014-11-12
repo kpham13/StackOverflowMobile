@@ -10,4 +10,8 @@
 
 @interface StackOverflowService : NSObject
 
++ (StackOverflowService *)networkController;
+
+- (void)fetchTaggedQuestions:(NSString *)searchTag withCompletion:(void(^)(NSArray *results, NSString *errorDescription))completionHandler;
+
 @end

@@ -7,31 +7,53 @@
 //
 
 #import "QuestionViewController.h"
+#import "Question.h"
+#import "StackOverflowService.h"
 
-@interface QuestionViewController ()
+@interface QuestionViewController () <UITableViewDataSource>
+
+@property (strong, nonatomic) NSArray *questions;
+@property (strong, nonatomic) StackOverflowService *networkController;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
+
 
 @implementation QuestionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.tableView.dataSource = self;
+    
+    [[StackOverflowService networkController] fetchTaggedQuestions:self.searchBar.text withCompletion:^(NSArray *results, NSString *errorDescription) {
+        self.questions = results;
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - TABLE VIEW DATA SOURCE
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (self.questions == nil) {
+        return 0;
+    } else {
+        return self.questions.count;
+    }
 }
-*/
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QUESTION_CELL" forIndexPath:indexPath];
+    
+    Question *question = self.questions[indexPath.row];
+    cell.textLabel.text = question.title;
+        
+    return cell;
+}
 
 @end
