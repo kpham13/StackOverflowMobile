@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "AuthorizationViewController.h"
+#import "StackOverflowService.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +18,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:@"AUTH_TOKEN"];
+    if (!token) {
+        dispatch_after(1, dispatch_get_main_queue(), ^{
+            [((UIWindow *)[[UIApplication sharedApplication].windows firstObject]).rootViewController presentViewController:[AuthorizationViewController new] animated:true completion:nil];
+        });
+    } else {
+        [StackOverflowService setToken:token];
+    }
+    
     return YES;
 }
 

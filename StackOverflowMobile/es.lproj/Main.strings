@@ -1,0 +1,12 @@
+
+/* Class = "IBUILabel"; text = "Profile"; ObjectID = "4wz-Bk-P85"; */
+"4wz-Bk-P85.text" = "Profile";
+
+/* Class = "IBUILabel"; text = "Questions"; ObjectID = "GYm-Ek-wsn"; */
+"GYm-Ek-wsn.text" = "Questions";
+
+/* Class = "IBUINavigationItem"; title = "Root View Controller"; ObjectID = "T4s-Hi-QIg"; */
+"T4s-Hi-QIg.title" = "Root View Controller";
+
+/* Class = "IBUILabel"; text = "Users"; ObjectID = "oqY-kP-cXN"; */
+"oqY-kP-cXN.text" = "Users";

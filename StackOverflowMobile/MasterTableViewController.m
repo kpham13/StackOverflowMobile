@@ -16,6 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Localization
+    self.title = NSLocalizedString(@"Stack", nil);
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,8 +10,13 @@
 
 @interface StackOverflowService : NSObject
 
-+ (StackOverflowService *)networkController;
+@property (strong, nonatomic) NSOperationQueue *operationQueue;
+@property (strong, nonatomic) NSURLSession *urlSession;
+@property (strong, nonatomic) NSString *key;
 
-- (void)fetchTaggedQuestions:(NSString *)searchTag withCompletion:(void(^)(NSArray *results, NSString *errorDescription))completionHandler;
++ (StackOverflowService *)networkController;
++ (void)setToken:(NSString *)token;
+
+- (void)fetchTaggedQuestions:(NSString *)searchTag withCompletion:(void(^)(NSMutableArray *results, NSString *errorDescription))completionHandler;
 
 @end

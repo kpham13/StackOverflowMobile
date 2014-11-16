@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Question.h"
+#import "StackOverflowService.h"
 
-@interface QuestionViewController : UIViewController
+@interface QuestionViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+
+@property (strong, nonatomic) NSMutableArray *questions;
+@property (strong, nonatomic) StackOverflowService *networkController;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar;
 
 @end

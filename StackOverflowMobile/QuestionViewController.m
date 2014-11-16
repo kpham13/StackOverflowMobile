@@ -7,30 +7,23 @@
 //
 
 #import "QuestionViewController.h"
-#import "Question.h"
-#import "StackOverflowService.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
-@interface QuestionViewController () <UITableViewDataSource>
-
-@property (strong, nonatomic) NSArray *questions;
-@property (strong, nonatomic) StackOverflowService *networkController;
-
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@interface QuestionViewController ()
 
 @end
-
 
 @implementation QuestionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.dataSource = self;
     
-    [[StackOverflowService networkController] fetchTaggedQuestions:self.searchBar.text withCompletion:^(NSArray *results, NSString *errorDescription) {
-        self.questions = results;
-        [self.tableView reloadData];
-    }];
+    // Localization
+    self.title = NSLocalizedString(@"Questions", nil);
+    
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    self.searchBar.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,6 +47,43 @@
     cell.textLabel.text = question.title;
         
     return cell;
+}
+
+#pragma mark - TABLE VIEW DELEGATE
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
+#pragma mark - SEARCH BAR
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [SVProgressHUD show];
+    NSString *searchText = searchBar.text;
+    NSLog(@"%@", searchText);
+    
+    [[StackOverflowService networkController] fetchTaggedQuestions:searchText withCompletion:^(NSMutableArray *results, NSString *errorDescription) {
+        if (errorDescription != nil) {
+            NSLog(@"%@", errorDescription);
+        } else {
+            NSLog(@"hello");
+            self.questions = results;
+            [self.tableView reloadData];
+        }
+    }];
+ 
+//    [self.networkController fetchTaggedQuestions:searchText withCompletion:^(NSMutableArray *results, NSString *errorDescription) {
+//        if (errorDescription != nil) {
+//            NSLog(@"%@", errorDescription);
+//        } else {
+//            NSLog(@"hello");
+//            self.questions = results;
+//            [self.tableView reloadData];
+//        }
+//    }];
+
+    [SVProgressHUD dismiss];
+    [self.searchBar resignFirstResponder];
 }
 
 @end
