@@ -8,6 +8,7 @@
 
 #import "AuthorizationViewController.h"
 #import "StackOverflowService.h"
+#import "Constants.h"
 
 @interface AuthorizationViewController ()
 
@@ -20,7 +21,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSString *urlString = @"https://stackexchange.com/oauth/dialog?client_id=3871&redirect_uri=https://stackexchange.com/oauth/login_success&scope=read_inbox";
+    // Initialize OAuth through WKWebView
+    NSString *urlString = [NSString stringWithFormat:@"%@?client_id=%@&redirect_uri=%@&scope=read_inbox", kOAuthDomain, kClientID, kOAuthRedirect];
+    //https://stackexchange.com/oauth/dialog?client_id=3871&redirect_uri=https://stackexchange.com/oauth/login_success&scope=read_inbox
     NSURL *url = [[NSURL alloc] initWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];
@@ -36,6 +39,8 @@
     self.webView = [[WKWebView alloc] init];
     self.view = self.webView;
 }
+
+#pragma mark - WK NAVIGATION DELEGATE
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     

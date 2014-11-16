@@ -25,4 +25,10 @@
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark - TABLE VIEW DELEGATE
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return self.view.frame.size.height * 0.3;
+}
+
 @end

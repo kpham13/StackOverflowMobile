@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MasterTableViewController : UITableViewController
+@interface MasterTableViewController : UITableViewController <UITableViewDelegate>
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
