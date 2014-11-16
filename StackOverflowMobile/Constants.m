@@ -8,6 +8,10 @@
 
 #import "Constants.h"
 
+NSString *const kAPIDomain = @"https://api.stackexchange.com/2.2";
+NSString *const kAPISearch = @"/search/advanced?order=desc&sort=activity&q=";
+NSString *const kAPISite = @"&site=stackoverflow";
+NSString *const kAPIUser = @"/users?order=desc&sort=reputation&inname=";
 NSString *const kClientID = @"3871";
 NSString *const kClientKey = @"AGLRU84QIkWw*XfUGX65eA((";
 NSString *const kOAuthDomain = @"https://stackexchange.com/oauth/dialog";

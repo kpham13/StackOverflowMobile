@@ -155,10 +155,10 @@
             </objects>
             <point key="canvasLocation" x="854" y="496"/>
         </scene>
-        <!--View Controller-->
+        <!--User View Controller-->
         <scene sceneID="4y8-pW-VFg">
             <objects>
-                <viewController id="Jjz-D2-rVY" sceneMemberID="viewController">
+                <viewController id="Jjz-D2-rVY" customClass="UserViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="x5f-V1-a8k"/>
                         <viewControllerLayoutGuide type="bottom" id="8Fg-wx-io4"/>
@@ -166,8 +166,38 @@
                     <view key="view" contentMode="scaleToFill" id="tKR-kD-jCx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="4Sb-y2-PaJ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="m21-lk-bVB">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="USER_CELL" id="SUM-Y3-z0N">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SUM-Y3-z0N" id="KZf-1w-RtO">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4Sb-y2-PaJ" firstAttribute="top" secondItem="tKR-kD-jCx" secondAttribute="topMargin" id="Lwu-gt-Rr4"/>
+                            <constraint firstItem="8Fg-wx-io4" firstAttribute="top" secondItem="4Sb-y2-PaJ" secondAttribute="bottom" id="VD4-qZ-1qh"/>
+                            <constraint firstItem="4Sb-y2-PaJ" firstAttribute="leading" secondItem="tKR-kD-jCx" secondAttribute="leadingMargin" constant="-16" id="idW-ec-t87"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4Sb-y2-PaJ" secondAttribute="trailing" constant="-16" id="kbZ-hh-S0w"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="m21-lk-bVB" id="nHn-sp-d6o"/>
+                        <outlet property="tableView" destination="4Sb-y2-PaJ" id="Kbc-fZ-2v5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NTo-XI-714" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

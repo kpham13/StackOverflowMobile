@@ -10,8 +10,6 @@
 
 @interface User : NSObject
 
-// /users
-// /2.2/users?order=desc&sort=reputation&site=stackoverflow
 @property (nonatomic, strong) NSNumber *accountID;
 @property (nonatomic, strong) NSNumber *userID;
 @property (nonatomic, strong) NSString *displayName;
@@ -25,3 +23,6 @@
 - (instancetype)initWithDictionary:(NSDictionary *)userDictionary;
 
 @end
+
+// /users
+// /2.2/users?order=desc&sort=reputation&inname=kevin&site=stackoverflow

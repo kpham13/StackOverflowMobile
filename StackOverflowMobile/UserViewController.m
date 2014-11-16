@@ -1,25 +1,22 @@
 //
-//  QuestionViewController.m
+//  UserViewController.m
 //  StackOverflowMobile
 //
-//  Created by Kevin Pham on 11/12/14.
+//  Created by Kevin Pham on 11/16/14.
 //  Copyright (c) 2014 Kevin Pham. All rights reserved.
 //
 
-#import "QuestionViewController.h"
+#import "UserViewController.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 
-@interface QuestionViewController ()
+@interface UserViewController ()
 
 @end
 
-@implementation QuestionViewController
+@implementation UserViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Localization
-    self.title = NSLocalizedString(@"Questions", nil);
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -33,19 +30,19 @@
 #pragma mark - TABLE VIEW DATA SOURCE
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (self.questions == nil) {
+    if (self.users == nil) {
         return 0;
     } else {
-        return self.questions.count;
+        return self.users.count;
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QUESTION_CELL" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"USER_CELL" forIndexPath:indexPath];
     
-    Question *question = self.questions[indexPath.row];
-    cell.textLabel.text = question.title;
-        
+    User *user = self.users[indexPath.row];
+    cell.textLabel.text = user.displayName;
+    
     return cell;
 }
 
@@ -62,25 +59,15 @@
     NSString *searchText = searchBar.text;
     NSLog(@"%@", searchText);
     
-    [[StackOverflowService networkController] fetchQuestions:searchText withCompletion:^(NSMutableArray *results, NSString *errorDescription) {
+    [[StackOverflowService networkController] fetchUsers:searchText withCompletion:^(NSMutableArray *results, NSString *errorDescription) {
         if (errorDescription != nil) {
             NSLog(@"%@", errorDescription);
         } else {
-            self.questions = results;
+            self.users = results;
             [self.tableView reloadData];
         }
     }];
- 
-//    [self.networkController fetchTaggedQuestions:searchText withCompletion:^(NSMutableArray *results, NSString *errorDescription) {
-//        if (errorDescription != nil) {
-//            NSLog(@"%@", errorDescription);
-//        } else {
-//            NSLog(@"hello");
-//            self.questions = results;
-//            [self.tableView reloadData];
-//        }
-//    }];
-
+    
     [SVProgressHUD dismiss];
     [self.searchBar resignFirstResponder];
 }

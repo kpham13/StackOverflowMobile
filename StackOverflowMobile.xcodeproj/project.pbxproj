@@ -20,6 +20,7 @@
 		0A0FC47E1A12DCF90078A58E /* StackOverflowService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0FC47D1A12DCF90078A58E /* StackOverflowService.m */; };
 		0A0FC4811A13C97C0078A58E /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0FC4801A13C97C0078A58E /* QuestionViewController.m */; };
 		0A81B95C1A14090C00C3A0F5 /* MasterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A81B95B1A14090C00C3A0F5 /* MasterTableViewController.m */; };
+		0AA8B7601A19679900A23C39 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA8B75F1A19679900A23C39 /* UserViewController.m */; };
 		0AB6413D1A18F9DA00DD7C74 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB6413C1A18F9DA00DD7C74 /* Constants.m */; };
 		0AC03A411A16D29C00D34533 /* AuthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC03A401A16D29C00D34533 /* AuthorizationViewController.m */; };
 		0AD03BAF1A18D2F5004C8CD0 /* QuestionModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD03BAE1A18D2F5004C8CD0 /* QuestionModelTests.m */; };
@@ -63,6 +64,8 @@
 		0A0FC4801A13C97C0078A58E /* QuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionViewController.m; sourceTree = "<group>"; };
 		0A81B95A1A14090C00C3A0F5 /* MasterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterTableViewController.h; sourceTree = "<group>"; };
 		0A81B95B1A14090C00C3A0F5 /* MasterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterTableViewController.m; sourceTree = "<group>"; };
+		0AA8B75E1A19679900A23C39 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
+		0AA8B75F1A19679900A23C39 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
 		0AB6413B1A18F9DA00DD7C74 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		0AB6413C1A18F9DA00DD7C74 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		0AC03A3F1A16D29C00D34533 /* AuthorizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthorizationViewController.h; sourceTree = "<group>"; };
@@ -196,6 +199,8 @@
 				0A0FC4741A12CE180078A58E /* SplitContainerViewController.m */,
 				0A0FC47C1A12DCF90078A58E /* StackOverflowService.h */,
 				0A0FC47D1A12DCF90078A58E /* StackOverflowService.m */,
+				0AA8B75E1A19679900A23C39 /* UserViewController.h */,
+				0AA8B75F1A19679900A23C39 /* UserViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 				0A0FC47E1A12DCF90078A58E /* StackOverflowService.m in Sources */,
 				0A0FC4811A13C97C0078A58E /* QuestionViewController.m in Sources */,
 				0A0FC4781A12D0BF0078A58E /* Question.m in Sources */,
+				0AA8B7601A19679900A23C39 /* UserViewController.m in Sources */,
 				0A0FC43E1A1173AE0078A58E /* main.m in Sources */,
 				0A81B95C1A14090C00C3A0F5 /* MasterTableViewController.m in Sources */,
 			);

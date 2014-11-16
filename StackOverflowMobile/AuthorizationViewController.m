@@ -23,7 +23,7 @@
     
     // Initialize OAuth through WKWebView
     NSString *urlString = [NSString stringWithFormat:@"%@?client_id=%@&redirect_uri=%@&scope=read_inbox", kOAuthDomain, kClientID, kOAuthRedirect];
-    //https://stackexchange.com/oauth/dialog?client_id=3871&redirect_uri=https://stackexchange.com/oauth/login_success&scope=read_inbox
+    //NSLog(@"%@", urlString);
     NSURL *url = [[NSURL alloc] initWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];

@@ -17,6 +17,7 @@
 + (StackOverflowService *)networkController;
 + (void)setToken:(NSString *)token;
 
-- (void)fetchTaggedQuestions:(NSString *)searchTag withCompletion:(void(^)(NSMutableArray *results, NSString *errorDescription))completionHandler;
+- (void)fetchQuestions:(NSString *)searchTag withCompletion:(void(^)(NSMutableArray *results, NSString *errorDescription))completionHandler;
+- (void)fetchUsers:(NSString *)searchText withCompletion:(void(^)(NSMutableArray *results, NSString *errorDescription))completionHandler;
 
 @end

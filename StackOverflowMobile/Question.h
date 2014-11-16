@@ -10,8 +10,6 @@
 
 @interface Question : NSObject
 
-// /questions
-// /2.2/questions?order=desc&sort=activity&site=stackoverflow
 @property (strong, nonatomic) NSNumber *questionID;
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *link;
@@ -23,3 +21,9 @@
 - (instancetype)initWithDictionary:(NSDictionary *)questionDictionary;
 
 @end
+
+// /search/advanced -> list of questions
+// /2.2/search/advanced?order=desc&sort=activity&q=swift&site=stackoverflow
+
+// /questions -> list of questions
+// /2.2/questions?order=desc&sort=activity&tagged=swift&site=stackoverflow

@@ -1,18 +1,18 @@
 //
-//  QuestionViewController.h
+//  UserViewController.h
 //  StackOverflowMobile
 //
-//  Created by Kevin Pham on 11/12/14.
+//  Created by Kevin Pham on 11/16/14.
 //  Copyright (c) 2014 Kevin Pham. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "Question.h"
+#import "User.h"
 #import "StackOverflowService.h"
 
-@interface QuestionViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+@interface UserViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
-@property (strong, nonatomic) NSMutableArray *questions;
+@property (strong, nonatomic) NSMutableArray *users;
 @property (strong, nonatomic) StackOverflowService *networkController;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
