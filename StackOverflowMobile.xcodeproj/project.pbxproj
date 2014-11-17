@@ -21,6 +21,8 @@
 		0A0FC4811A13C97C0078A58E /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0FC4801A13C97C0078A58E /* QuestionViewController.m */; };
 		0A81B95C1A14090C00C3A0F5 /* MasterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A81B95B1A14090C00C3A0F5 /* MasterTableViewController.m */; };
 		0AA8B7601A19679900A23C39 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA8B75F1A19679900A23C39 /* UserViewController.m */; };
+		0AA8B7631A19AD5300A23C39 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA8B7621A19AD5300A23C39 /* ProfileViewController.m */; };
+		0AA8B7651A19B39000A23C39 /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AA8B7641A19B39000A23C39 /* QuestionCell.xib */; };
 		0AB6413D1A18F9DA00DD7C74 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB6413C1A18F9DA00DD7C74 /* Constants.m */; };
 		0AC03A411A16D29C00D34533 /* AuthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC03A401A16D29C00D34533 /* AuthorizationViewController.m */; };
 		0AD03BAF1A18D2F5004C8CD0 /* QuestionModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD03BAE1A18D2F5004C8CD0 /* QuestionModelTests.m */; };
@@ -66,6 +68,9 @@
 		0A81B95B1A14090C00C3A0F5 /* MasterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterTableViewController.m; sourceTree = "<group>"; };
 		0AA8B75E1A19679900A23C39 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
 		0AA8B75F1A19679900A23C39 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		0AA8B7611A19AD5300A23C39 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		0AA8B7621A19AD5300A23C39 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		0AA8B7641A19B39000A23C39 /* QuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
 		0AB6413B1A18F9DA00DD7C74 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		0AB6413C1A18F9DA00DD7C74 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		0AC03A3F1A16D29C00D34533 /* AuthorizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthorizationViewController.h; sourceTree = "<group>"; };
@@ -182,6 +187,7 @@
 			children = (
 				0A0FC4481A1173AE0078A58E /* Main.storyboard */,
 				0A0FC44D1A1173AE0078A58E /* LaunchScreen.xib */,
+				0AA8B7641A19B39000A23C39 /* QuestionCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -193,6 +199,8 @@
 				0AC03A401A16D29C00D34533 /* AuthorizationViewController.m */,
 				0A81B95A1A14090C00C3A0F5 /* MasterTableViewController.h */,
 				0A81B95B1A14090C00C3A0F5 /* MasterTableViewController.m */,
+				0AA8B7611A19AD5300A23C39 /* ProfileViewController.h */,
+				0AA8B7621A19AD5300A23C39 /* ProfileViewController.m */,
 				0A0FC47F1A13C97C0078A58E /* QuestionViewController.h */,
 				0A0FC4801A13C97C0078A58E /* QuestionViewController.m */,
 				0A0FC4731A12CE180078A58E /* SplitContainerViewController.h */,
@@ -306,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AD03BBA1A18E4F5004C8CD0 /* Localizable.strings in Resources */,
+				0AA8B7651A19B39000A23C39 /* QuestionCell.xib in Resources */,
 				0A0FC44A1A1173AE0078A58E /* Main.storyboard in Resources */,
 				0AD03BB11A18D4E8004C8CD0 /* Sample.json in Resources */,
 				0A0FC44F1A1173AE0078A58E /* LaunchScreen.xib in Resources */,
@@ -369,6 +378,7 @@
 				0A0FC47E1A12DCF90078A58E /* StackOverflowService.m in Sources */,
 				0A0FC4811A13C97C0078A58E /* QuestionViewController.m in Sources */,
 				0A0FC4781A12D0BF0078A58E /* Question.m in Sources */,
+				0AA8B7631A19AD5300A23C39 /* ProfileViewController.m in Sources */,
 				0AA8B7601A19679900A23C39 /* UserViewController.m in Sources */,
 				0A0FC43E1A1173AE0078A58E /* main.m in Sources */,
 				0A81B95C1A14090C00C3A0F5 /* MasterTableViewController.m in Sources */,

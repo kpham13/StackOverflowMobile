@@ -203,10 +203,10 @@
             </objects>
             <point key="canvasLocation" x="1594" y="104"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="ELs-Py-n6Y">
             <objects>
-                <viewController id="XyY-p6-UCQ" sceneMemberID="viewController">
+                <viewController id="XyY-p6-UCQ" customClass="ProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j4B-dQ-G9D"/>
                         <viewControllerLayoutGuide type="bottom" id="o3W-5c-vUz"/>
