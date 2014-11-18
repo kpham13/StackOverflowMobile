@@ -23,6 +23,7 @@
 		0AA8B7601A19679900A23C39 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA8B75F1A19679900A23C39 /* UserViewController.m */; };
 		0AA8B7631A19AD5300A23C39 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA8B7621A19AD5300A23C39 /* ProfileViewController.m */; };
 		0AA8B7651A19B39000A23C39 /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AA8B7641A19B39000A23C39 /* QuestionCell.xib */; };
+		0AA8B7681A19BB7900A23C39 /* QuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA8B7671A19BB7900A23C39 /* QuestionCell.m */; };
 		0AB6413D1A18F9DA00DD7C74 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB6413C1A18F9DA00DD7C74 /* Constants.m */; };
 		0AC03A411A16D29C00D34533 /* AuthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC03A401A16D29C00D34533 /* AuthorizationViewController.m */; };
 		0AD03BAF1A18D2F5004C8CD0 /* QuestionModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD03BAE1A18D2F5004C8CD0 /* QuestionModelTests.m */; };
@@ -71,6 +72,8 @@
 		0AA8B7611A19AD5300A23C39 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		0AA8B7621A19AD5300A23C39 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		0AA8B7641A19B39000A23C39 /* QuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
+		0AA8B7661A19BB7900A23C39 /* QuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionCell.h; sourceTree = "<group>"; };
+		0AA8B7671A19BB7900A23C39 /* QuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionCell.m; sourceTree = "<group>"; };
 		0AB6413B1A18F9DA00DD7C74 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		0AB6413C1A18F9DA00DD7C74 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		0AC03A3F1A16D29C00D34533 /* AuthorizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthorizationViewController.h; sourceTree = "<group>"; };
@@ -188,6 +191,8 @@
 				0A0FC4481A1173AE0078A58E /* Main.storyboard */,
 				0A0FC44D1A1173AE0078A58E /* LaunchScreen.xib */,
 				0AA8B7641A19B39000A23C39 /* QuestionCell.xib */,
+				0AA8B7661A19BB7900A23C39 /* QuestionCell.h */,
+				0AA8B7671A19BB7900A23C39 /* QuestionCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -370,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AB6413D1A18F9DA00DD7C74 /* Constants.m in Sources */,
+				0AA8B7681A19BB7900A23C39 /* QuestionCell.m in Sources */,
 				0A0FC4751A12CE180078A58E /* SplitContainerViewController.m in Sources */,
 				0A0FC47B1A12D67C0078A58E /* User.m in Sources */,
 				0A0FC4411A1173AE0078A58E /* AppDelegate.m in Sources */,

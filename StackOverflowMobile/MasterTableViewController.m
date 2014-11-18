@@ -7,6 +7,8 @@
 //
 
 #import "MasterTableViewController.h"
+#import "AuthorizationViewController.h"
+#import "StackOverflowService.h"
 
 @interface MasterTableViewController ()
 
@@ -16,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupVC];
     
     // Localization
     self.title = NSLocalizedString(@"Stack", nil);
@@ -29,6 +32,20 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return self.view.frame.size.height * 0.3;
+}
+
+#pragma mark - VIEW DID LOAD
+
+- (void)setupVC {
+    NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:@"AUTH_TOKEN"];
+    
+    if (!token) {
+        dispatch_after(1, dispatch_get_main_queue(), ^{
+            [((UIWindow *)[[UIApplication sharedApplication].windows firstObject]).rootViewController presentViewController:[AuthorizationViewController new] animated:true completion:nil];
+        });
+    } else {
+        [StackOverflowService setToken:token];
+    }
 }
 
 @end

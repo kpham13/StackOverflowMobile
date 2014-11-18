@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Question.h"
+#import "QuestionCell.h"
 #import "StackOverflowService.h"
 
 @interface QuestionViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>

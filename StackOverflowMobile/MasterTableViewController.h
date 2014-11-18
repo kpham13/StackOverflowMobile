@@ -13,5 +13,6 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void)setupVC;
 
 @end

@@ -18,6 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // Register Nib
+    [[self tableView] registerNib:[UINib nibWithNibName:@"QuestionCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"QUESTION_CELL"];
+    
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+
     // Localization
     self.title = NSLocalizedString(@"Questions", nil);
     
@@ -41,11 +46,11 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QUESTION_CELL" forIndexPath:indexPath];
+    QuestionCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QUESTION_CELL" forIndexPath:indexPath];
     
     Question *question = self.questions[indexPath.row];
-    cell.textLabel.text = question.title;
-        
+    cell.titleLabel.text = question.title;
+    
     return cell;
 }
 
@@ -70,16 +75,6 @@
             [self.tableView reloadData];
         }
     }];
- 
-//    [self.networkController fetchTaggedQuestions:searchText withCompletion:^(NSMutableArray *results, NSString *errorDescription) {
-//        if (errorDescription != nil) {
-//            NSLog(@"%@", errorDescription);
-//        } else {
-//            NSLog(@"hello");
-//            self.questions = results;
-//            [self.tableView reloadData];
-//        }
-//    }];
 
     [SVProgressHUD dismiss];
     [self.searchBar resignFirstResponder];
